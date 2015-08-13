@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Visible Console</title>
+		<style>
+			
+			
+			body, html {
+				color:#333333;
+				background-color:#336699;
+				font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+				height:100%;
+				padding:0;
+				margin:0;
+			}
+			div {
+				box-sizing: border-box;
+			}
+			.column {
+				background-color:#f8f7f6;
+				max-width:600px;
+				padding:50px 50px 250px;
+				margin:auto;
+				position:relative;
+			}
+			
+			.code {
+				border:1px solid #eeeeee;
+				font-family:"Lucida Console", Monaco, monospace;
+				color:#445566;
+				padding:3px 10px;
+				font-size:75%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="column">
+			<h1>Visible Console</h1>
+
+			<p>View console.log and error messages on-screen. Perfect for debugging on mobile devices.</p>
+
+			<h2>Instructions</h2>
+			<ol>
+			<li>Include VisibleConsole.js in your HTML: <div class="code">&lt;script src=&quot;VisibleConsole.js&quot;&gt;&lt;/script&gt;</div>
+			<li>console.log as normal
+			<li>Messages appear in the on-screen console as well as in your usual browser console.
+			</ol>
+
+			<h2>Advanced usage</h2>
+
+			<p>Sometimes you'll want to keep track of rapidly changing values. Instead of clogging up your console, you can send a special name value as the first parameter of your console.log call, and those logs will be placed in their own persistent text boxes.</p>
+
+			<h3>stat_</h3>
+				A simple statistic.
+				<div class="code">console.log("stat_Time", "It was", new Date(), "when this was last called");</div>
+
+			<h3>incr_</h3>
+				Much the same as stat, but automatically keeps track of how many times it has been logged, as well as logging any additional parameters.
+				<div class="code">console.log("incr_Seconds since page load");</div>
+
+		</div>
+		
+	
+		<script src="VisibleConsole.js"></script>
+		<script>
+			
+		console.log("stat_Time", new Date());
+			
+		console.log("incr_Seconds since page load");
+		setInterval(function() { console.log("incr_Seconds since page load");}, 1000);
+			
+		console.log("Visible Console ready!");
+
+		</script>
+	</body>
+</html>
