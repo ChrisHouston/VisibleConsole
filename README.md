@@ -3,10 +3,7 @@ View console.log and error messages on-screen. Perfect for debugging on mobile d
 
 ## Instructions
 
-1. Include VisibleConsole.js in your HTML:
-```
-<script src="VisibleConsole.js"></script>
-```
+1. Include VisibleConsole.js in your HTML: `<script src="VisibleConsole.js"></script>`
 2. console.log as normal
 3. Messages appear in the on-screen console as well as in your usual browser console.
 
