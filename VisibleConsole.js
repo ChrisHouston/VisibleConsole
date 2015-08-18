@@ -6,6 +6,7 @@
 		}
 	}
 
+	var panelOpen = true;
 	var consoleLog = console.log;
 
 	var div = document.createElement("div");
@@ -15,7 +16,7 @@
 		width:"100%",
 		bottom:0,
 		left:0,
-		fontFamily:'"Lucida Console", Monaco, monospace',
+		fontFamily:'"Andale Mono", Consolas, monospace',
 		fontSize:'12px',
 		position:"fixed",
 		lineHeight:"15px",
@@ -47,6 +48,37 @@
 		position:"absolute"
 	});
 	div.appendChild(scroller);
+	
+	var closeButton = document.createElement("div");
+	css(closeButton, {
+		top:0,
+		right:0,
+		position:"absolute",
+		padding:"2px 5px",
+		backgroundColor:"#ffffff",
+		color:"#000000"
+	});
+	closeButton.innerHTML="v";
+	div.appendChild(closeButton);
+	closeButton.addEventListener("click", function() {
+		if (panelOpen) {
+			panelOpen = false;
+			css(closeButton, {
+				top:"-18px",
+				paddingTop:"4px"
+			});
+			div.style.bottom = "-200px";
+			closeButton.innerHTML="^";
+		} else {
+			panelOpen = true;
+			css(closeButton, {
+				top:0,
+				paddingTop:"2px"
+			});
+			div.style.bottom = 0;
+			closeButton.innerHTML="v";
+		}
+	});
 
 	var updateDivs = [];
 
