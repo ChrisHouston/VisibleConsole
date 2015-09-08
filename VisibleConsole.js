@@ -51,32 +51,41 @@
 	
 	var closeButton = document.createElement("div");
 	css(closeButton, {
-		top:0,
+		top:"-22px",
 		right:0,
 		position:"absolute",
-		padding:"2px 5px",
-		backgroundColor:"#ffffff",
-		color:"#000000"
+		padding:"11px",
+		color:"#000000",
+		height:"44px",
+		width:"44px"
 	});
-	closeButton.innerHTML="v";
+	var closeButtonIcon = document.createElement("div");
+	css(closeButtonIcon, {
+		height:"22px",
+		width:"22px",
+		backgroundColor:"#ffffff",
+		borderRadius:"30px",
+		textAlign:"center",
+		lineHeight:"22px"
+	});
+	closeButtonIcon.innerHTML="v";
+	closeButton.appendChild(closeButtonIcon);
 	div.appendChild(closeButton);
 	closeButton.addEventListener("click", function() {
 		if (panelOpen) {
 			panelOpen = false;
 			css(closeButton, {
-				top:"-18px",
-				paddingTop:"4px"
+				top:"-25px"
 			});
 			div.style.bottom = "-200px";
-			closeButton.innerHTML="^";
+			closeButtonIcon.innerHTML="^";
 		} else {
 			panelOpen = true;
 			css(closeButton, {
-				top:0,
-				paddingTop:"2px"
+				top:"-22px"
 			});
 			div.style.bottom = 0;
-			closeButton.innerHTML="v";
+			closeButtonIcon.innerHTML="v";
 		}
 	});
 
