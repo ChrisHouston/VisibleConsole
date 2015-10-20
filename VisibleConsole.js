@@ -51,8 +51,8 @@
 	
 	var closeButton = document.createElement("div");
 	css(closeButton, {
-		top:"-22px",
-		right:0,
+		top: "-22px",
+		right: "22px",
 		position:"absolute",
 		padding:"11px",
 		color:"#000000",
@@ -61,12 +61,14 @@
 	});
 	var closeButtonIcon = document.createElement("div");
 	css(closeButtonIcon, {
-		height:"22px",
-		width:"22px",
-		backgroundColor:"#ffffff",
-		borderRadius:"30px",
-		textAlign:"center",
-		lineHeight:"22px"
+		marginTop: "11px",
+		marginLeft: "11px",
+		height: "22px",
+		width: "22px",
+		borderRadius: "30px",
+		textAlign: "center",
+		lineHeight: "22px",
+		backgroundColor:"#ffffff"
 	});
 	closeButtonIcon.innerHTML="v";
 	closeButton.appendChild(closeButtonIcon);
